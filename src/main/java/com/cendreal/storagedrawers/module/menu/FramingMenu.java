@@ -28,7 +28,7 @@ public final class FramingMenu {
     private final Set<FramingController> dirty=Collections.newSetFromMap(new IdentityHashMap<>());private boolean scheduled;
     private static final class Holder implements InventoryHolder{
         final FramingController table;final Inventory inventory;
-        Holder(FramingController table,Player player){this.table=table;String title="<white><shift:-8><image:storagedrawers:gui_framing><shift:-169><dark_gray>�����̨<shift:-27><font:storagedrawers:framing_labels>Ŀ��</font><shift:18><font:storagedrawers:framing_labels>����߿�����</font><shift:18><font:storagedrawers:framing_labels>��Ʒ</font>";inventory=Bukkit.createInventory(this,45,GsonComponentSerializer.gson().deserialize(AdventureHelper.componentToJson(AdventureHelper.deserialize(title,PlayerOptionalContext.of(BukkitAdaptor.adapt(player))))));}
+        Holder(FramingController table,Player player){this.table=table;String title="<white><shift:-8><image:storagedrawers:gui_framing><shift:-169><dark_gray>镶框工作台<shift:-27><font:storagedrawers:framing_labels>目标</font><shift:18><font:storagedrawers:framing_labels>侧面边框正面</font><shift:18><font:storagedrawers:framing_labels>成品</font>";inventory=Bukkit.createInventory(this,45,GsonComponentSerializer.gson().deserialize(AdventureHelper.componentToJson(AdventureHelper.deserialize(title,PlayerOptionalContext.of(BukkitAdaptor.adapt(player))))));}
         @Override public Inventory getInventory(){return inventory;}
         void refresh(){inventory.clear();for(int i=0;i<4;i++)inventory.setItem(INPUTS[i],(ItemStack)table.input(i).platformItem());inventory.setItem(OUTPUT,(ItemStack)table.result().platformItem());}
         int input(int raw){for(int i=0;i<INPUTS.length;i++)if(raw==INPUTS[i])return i;return -1;}

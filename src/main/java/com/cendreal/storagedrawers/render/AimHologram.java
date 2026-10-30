@@ -77,7 +77,7 @@ public final class AimHologram {
             if(itemChanged){previous=template;icon.setItemStack(template.isEmpty()?net.minecraft.world.item.ItemStack.EMPTY:((net.minecraft.world.item.ItemStack)template.minecraftItem()).copyWithCount(1));}
             if(itemChanged||count!=next||previousMissing!=missing||infinite!=vending){
                 count=next;previousMissing=missing;infinite=vending;
-                Component label=missing?Component.literal("δ��װ����"):template.isEmpty()?Component.literal("�ճ���"):((net.minecraft.world.item.ItemStack)template.minecraftItem()).getHoverName().copy().append(Component.literal(" �� "+(vending?"��":Integer.toString(next))).withStyle(net.minecraft.ChatFormatting.GOLD));
+                Component label=missing?Component.literal("未安装抽屉"):template.isEmpty()?Component.literal("空抽屉"):((net.minecraft.world.item.ItemStack)template.minecraftItem()).getHoverName().copy().append(Component.literal(" × "+(vending?"∞":Integer.toString(next))).withStyle(net.minecraft.ChatFormatting.GOLD));
                 text.setText(label);
             }
             if(!spawned){spawn(player,icon);spawn(player,text);spawned=true;}else{update(player,icon);update(player,text);}

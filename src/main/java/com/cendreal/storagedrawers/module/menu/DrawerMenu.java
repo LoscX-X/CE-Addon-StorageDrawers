@@ -36,7 +36,7 @@ public final class DrawerMenu {
         Holder(DrawerController drawer,Player player) {
             this.drawer=drawer;storage=storageCells(drawer);upgrades=upgradeCells();
             String type=(drawer.behavior.layout.compacting()?"comp_":"")+drawer.size();
-            String title="<white><shift:-8><image:storagedrawers:gui_"+type+"><shift:-169><dark_gray>�������<shift:-36><font:storagedrawers:upgrade_label>����</font>";
+            String title="<white><shift:-8><image:storagedrawers:gui_"+type+"><shift:-169><dark_gray>抽屉管理<shift:-36><font:storagedrawers:upgrade_label>升级</font>";
             var parsed=AdventureHelper.deserialize(title,PlayerOptionalContext.of(BukkitAdaptor.adapt(player)));
             inventory=Bukkit.createInventory(this,LAYOUT.get("rows").getAsInt()*9,GsonComponentSerializer.gson().deserialize(AdventureHelper.componentToJson(parsed)));
         }
@@ -50,9 +50,9 @@ public final class DrawerMenu {
                 ItemStack display=((ItemStack)template.platformItem()).clone();display.setAmount(Math.max(1,Math.min(drawer.count(i),display.getMaxStackSize())));
                 var meta=display.getItemMeta();
                 List<Component> lore=new ArrayList<>();if(meta.hasLore())lore.addAll(meta.lore());
-                lore.add(Component.text("������"+drawer.count(i)+" / "+drawer.capacity(i),NamedTextColor.GRAY));
-                lore.add(Component.text("������� / �Ҽ�����������ͬ����Ʒ",NamedTextColor.DARK_GRAY));
-                if(drawer.count(i)==0)lore.add(Component.text(drawer.behavior.layout.compacting()?"��ǰ�����޿�ȡ������Ʒ":"��������������ǰΪ��",NamedTextColor.YELLOW));
+                lore.add(Component.text("数量："+drawer.count(i)+" / "+drawer.capacity(i),NamedTextColor.GRAY));
+                lore.add(Component.text("左键整组 / 右键单个；放入同类物品",NamedTextColor.DARK_GRAY));
+                if(drawer.count(i)==0)lore.add(Component.text(drawer.behavior.layout.compacting()?"当前层暂无可取出的物品":"类型已锁定，当前为空",NamedTextColor.YELLOW));
                 meta.lore(lore);display.setItemMeta(meta);inventory.setItem(storage[i],display);
             }
             var installed=drawer.upgrades();for(int i=0;i<upgrades.length;i++)if(!installed.get(i).isEmpty())inventory.setItem(upgrades[i],(ItemStack)drawer.upgradeItem(i).platformItem());

@@ -1,9 +1,0 @@
-{
-  "name": "ce-addon-storagedrawers-build",
-  "version": "26.3.0-dev",
-  "private": true,
-  "description": "Resource generation tools for CE-Addon-StorageDrawers",
-  "dependencies": {
-    "sharp": "0.35.5"
-  }
-}
