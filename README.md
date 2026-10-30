@@ -9,7 +9,7 @@
 - Paper 26.3、Java 25、CraftEngine 26.10-SNAPSHOT。
 - CoreProtect 可选，提供容器日志与 inspect 支持。
 
-插件需要搭配对应的 CE 资源包使用。正面数量默认开启，顶部瞄准悬浮默认关闭，可在配置文件中调整。
+下载 [CE 资源包](CE-Addon-StorageDrawers-CE-resources.zip)，将其中的 `storagedrawers` 文件夹解压到服务器的 `plugins/CraftEngine/resources/`，再执行 `/ce reload all` 生成并加载合并资源包。正面数量默认开启，顶部瞄准悬浮默认关闭，可在配置文件中调整。
 
 ## 源码与 API
 
