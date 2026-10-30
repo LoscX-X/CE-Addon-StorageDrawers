@@ -11,6 +11,8 @@
 
 下载 [CE 资源包](CE-Addon-StorageDrawers-CE-resources.zip)，将其中的 `storagedrawers` 文件夹解压到服务器的 `plugins/CraftEngine/resources/`，再执行 `/ce reload all` 生成并加载合并资源包。正面数量默认开启，顶部瞄准悬浮默认关闭，可在配置文件中调整。
 
+使用 CraftEngine 客户端模组时，需将 CE 配置 `resource-pack.generate-mod-assets` 设为 `true`，然后重新生成资源包。
+
 ## 源码与 API
 
 源码位于 `src/main`。编译需要对应版本的 Paper、CraftEngine 与 CoreProtect API。
