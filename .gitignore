@@ -1,0 +1,10 @@
+build/
+node_modules/
+vendor/
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+*.class
+*.jar
+*.log

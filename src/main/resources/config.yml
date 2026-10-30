@@ -1,0 +1,33 @@
+# StorageDrawers 1.21 defaults; conversion is deliberately allowlisted.
+compatibility:
+  coreprotect:
+    enabled: true
+controller:
+  # Cube radius on X/Y/Z, matching the upstream default. Never loads missing chunks.
+  range: 50
+  remote:
+    # 0 follows controller.range; positive values are capped by it.
+    max-range: 0
+    max-group-range: 0
+display:
+  # Front counts default on. Format-1 drawers adopt this default when first loaded.
+  front-quantity-default: true
+aim-hologram:
+  # Optional per-player detail above the aimed drawer; front counts work independently.
+  enabled: false
+  distance: 6
+conversion:
+  ore-types: ['c:storage_blocks', 'c:ingots', 'c:nuggets']
+  ore-materials: [aluminum, constantan, steel, uranium, invar, tin, lead, silver, platinum, nickel, osmium, bronze, electrum]
+  tag-allow-list: []
+  tag-deny-list: []
+  item-equivalence-groups: []
+filled-drawers:
+  heavy: false
+  allow-in-drawers: false
+  allow-in-container-items: false
+detached-drawers:
+  enabled: true
+  heavy: false
+  force-capacity-check: false
+  allow-in-container-items: false

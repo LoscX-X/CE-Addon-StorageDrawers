@@ -1,0 +1,20 @@
+name: CE-Addon-StorageDrawers
+version: '26.3.0-dev'
+main: com.cendreal.storagedrawers.StorageDrawersCE
+api-version: '26.3'
+authors: [LoscX]
+description: StorageDrawers integration for CraftEngine
+permissions:
+  storagedrawers.aim:
+    description: Show item icons and counts above the drawer being aimed at
+    default: true
+dependencies:
+  server:
+    CraftEngine:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    CoreProtect:
+      load: BEFORE
+      required: false
+      join-classpath: true
